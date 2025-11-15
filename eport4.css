@@ -1,0 +1,191 @@
+/* Divyanshu’s Tech World — Contact Page (Glassy Glow Edition) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg1: #050b18;
+  --bg2: #0b132b;
+  --accent1: #00e5ff;
+  --accent2: #0078d7;
+  --glass: rgba(255, 255, 255, 0.06);
+  --text: #e8f0ff;
+  --muted: #b3c0d8;
+  --glow: 0 0 12px rgba(0,229,255,0.4), 0 0 25px rgba(0,120,215,0.3);
+}
+
+body {
+  background: radial-gradient(circle at top left, var(--bg2), var(--bg1) 80%);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #0d47a1, #00bcd4, #00e5ff);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.2);
+  animation: fadeInDown 1s ease;
+}
+
+header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 1px;
+  text-shadow: var(--glow);
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 3rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  animation: fadeInUp 1.2s ease;
+}
+
+/* ===== CONTACT BOXES ===== */
+.contact-info,
+.contact-form {
+  background: var(--glass);
+  border-radius: 16px;
+  padding: 2rem;
+  flex: 1 1 420px;
+  box-shadow: 0 10px 40px rgba(0, 229, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.12);
+  backdrop-filter: blur(14px);
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.contact-info:hover,
+.contact-form:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 60px rgba(0, 229, 255, 0.15);
+}
+
+h2 {
+  color: var(--accent1);
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  text-shadow: var(--glow);
+}
+
+/* ===== INFO BOX ===== */
+.info-box p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+a {
+  color: var(--accent1);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent2);
+  text-decoration: underline;
+}
+
+/* ===== FORM ===== */
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+  transform: scale(1.02);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #aab8cc;
+}
+
+button {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: white;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: 0 0 12px rgba(0,229,255,0.4);
+  transition: all 0.35s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, var(--accent2), var(--accent1));
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0,229,255,0.6);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(0, 229, 255, 0.05);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  box-shadow: 0 -4px 20px rgba(0, 229, 255, 0.08);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .contact-info, .contact-form {
+    padding: 1.6rem;
+  }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garima's Tech World</title>
+  <link rel="stylesheet" href="eport0.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Starfield Background -->
+  <div class="stars"></div>
+  <div class="stars2"></div>
+  <div class="stars3"></div>
+
+  <!-- 🚀 BUTTONS SECTION -->
+  <section class="hero-section">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>🌐 Garima's Tech World</h1>
+      <p class="tagline">Exploring Code. Building Ideas. Sharing Knowledge.</p>
+      <p class="subtagline">“Turning logic into innovation through programming.”</p>
+
+      <div class="buttons">
+        <a href="eport1.html" class="btn"><span>💻 SWOC Analysis</span></a>
+        <a href="eport3.html" class="btn"><span>🚀 Projects</span></a>
+        <a href="eport2.html" class="btn"><span>🎥 My Videos</span></a>
+        <a href="eport4.html" class="btn"><span>📞 Contact Me</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌟 ABOUT SECTION -->
+  <section class="about-section">
+    <div class="about-content">
+      <img src="garima.webp" alt="Divyanshu Sharma" class="about-pic" />
+      <h2>👨‍💻 About Me</h2>
+      <p>
+  I’m <strong>Garima Negi</strong>, a dedicated B.Tech student passionate about coding,
+   problem-solving, and building meaningful tech solutions. I enjoy turning logic into working programs 
+   and continuously improving my technical skill set.
+</p>
+
+<p>
+  I have experience working on console-based and beginner-friendly development projects, where
+   I focus on writing efficient and structured code. I’m particularly interested in crafting
+    systems that are both functional and user-focused.
+</p>
+
+<p>
+  Currently, I’m strengthening my knowledge in <b>Data Structures, Algorithms,</b> and <b>Object-Oriented Programming</b>, 
+  while also exploring technologies like <b>Python</b> and <b>Frontend Development</b> to expand my capabilities.
+</p>
+
+<p>
+  My long-term goal is to become a <b>skilled software developer</b> who can build scalable, innovative, 
+  and user-friendly applications.
+</p>
+
+    </div>
+  </section>
+
+  <!-- ⚡ FOOTER -->
+  <footer>
+    <p>© 2025 Garima Negi | E-Portfolio Project</p>
+  </footer>
+
+  <!-- ✨ PARALLAX EFFECT -->
+  <script>
+    document.addEventListener("mousemove", (e) => {
+      const moveX = (e.clientX / window.innerWidth - 0.5) * 10;
+      const moveY = (e.clientY / window.innerHeight - 0.5) * 10;
+      document.querySelector(".content").style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+  </script>
+</body>
+</html>

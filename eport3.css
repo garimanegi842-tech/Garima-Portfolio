@@ -1,0 +1,171 @@
+/* Divyanshu's Tech World — Projects Page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg1: #050b18;
+  --bg2: #0b132b;
+  --card: rgba(255, 255, 255, 0.05);
+  --accent1: #00e5ff;
+  --accent2: #0078d7;
+  --text-main: #eaf8ff;
+  --text-muted: #bcd1de;
+  --glow: 0 0 10px rgba(0,229,255,0.4), 0 0 25px rgba(0,120,215,0.3);
+}
+
+body {
+  background: radial-gradient(circle at top left, var(--bg2), var(--bg1) 70%);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #0d47a1, #00bcd4, #00e5ff);
+  color: white;
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  animation: fadeInDown 1s ease-in;
+}
+
+header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+  text-shadow: var(--glow);
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  animation: fadeInUp 1.2s ease;
+}
+
+/* ===== PROJECT CARD ===== */
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: var(--card);
+  margin-bottom: 2.2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0,229,255,0.1);
+  box-shadow: 0 10px 40px rgba(0, 229, 255, 0.06);
+  transition: all 0.35s cubic-bezier(.25, .8, .25, 1);
+  position: relative;
+}
+
+.project::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,229,255,0.15), transparent 60%);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.project:hover::before {
+  opacity: 1;
+}
+
+.project:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 50px rgba(0,229,255,0.15);
+}
+
+/* ===== PROJECT IMAGE ===== */
+.project img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: cover;
+  border-right: 1px solid rgba(255,255,255,0.05);
+  filter: brightness(0.95);
+  transition: filter 0.4s ease;
+}
+
+.project:hover img {
+  filter: brightness(1.1) saturate(1.15);
+}
+
+/* ===== PROJECT INFO ===== */
+.info {
+  flex: 1;
+  padding: 2rem;
+}
+
+.info h2 {
+  color: var(--accent1);
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-shadow: var(--glow);
+}
+
+.info p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: rgba(0, 229, 255, 0.05);
+  color: var(--text-main);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  font-size: 0.95rem;
+  margin-top: 3rem;
+  box-shadow: 0 -4px 20px rgba(0, 229, 255, 0.08);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .project {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project img {
+    max-width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .info {
+    padding: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+}

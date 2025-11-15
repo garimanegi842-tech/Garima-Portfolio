@@ -1,0 +1,217 @@
+/* Divyanshu’s Tech World — Videos Page */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg: #030b17;
+  --bg2: #0a1832;
+  --card: rgba(255, 255, 255, 0.06);
+  --accent1: #00e5ff;
+  --accent2: #0078d7;
+  --muted: #b8c9da;
+  --glow: 0 0 10px rgba(0, 229, 255, 0.5), 0 0 20px rgba(0, 120, 215, 0.3);
+}
+
+body {
+  background: radial-gradient(circle at top left, var(--bg2), var(--bg) 70%);
+  color: #e6f0f6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-attachment: fixed;
+}
+
+/* ===== HEADER ===== */
+.topbar {
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 20px 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 25px rgba(0, 229, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.topbar .wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.topbar h1 {
+  font-size: 1.4rem;
+  color: #eaffff;
+  letter-spacing: 0.4px;
+  text-shadow: var(--glow);
+  animation: fadeIn 1s ease-in;
+}
+
+.home-link {
+  color: var(--accent1);
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+.home-link:hover {
+  color: #fff;
+  text-shadow: var(--glow);
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 0 16px 60px;
+  animation: fadeInUp 1.2s ease;
+}
+
+.page-intro {
+  color: var(--muted);
+  margin: 12px 0 26px;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ===== VIDEO GRID ===== */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.video-card {
+  background: var(--card);
+  border: 1px solid rgba(0, 229, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 229, 255, 0.05);
+  transition: all 0.35s cubic-bezier(.25, .8, .25, 1);
+  position: relative;
+}
+
+.video-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.15), transparent 60%);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.video-card:hover::before {
+  opacity: 1;
+}
+
+.video-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 229, 255, 0.12);
+}
+
+/* ===== MEDIA AREA ===== */
+.media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.95);
+  transition: 0.4s ease-in-out;
+}
+
+.video-card:hover .media video {
+  filter: brightness(1.1) saturate(1.2);
+}
+
+/* ===== META INFO ===== */
+.meta {
+  padding: 16px 18px 20px;
+}
+
+.meta h3 {
+  font-size: 1.1rem;
+  color: #eaffff;
+  margin-bottom: 6px;
+  font-weight: 600;
+  text-shadow: 0 0 6px rgba(0, 229, 255, 0.3);
+}
+
+.meta .desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+/* ===== HOW-TO SECTION ===== */
+.howto {
+  margin-top: 36px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 255, 0.08);
+  color: var(--muted);
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.05);
+}
+
+.howto h4 {
+  color: var(--accent1);
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  text-shadow: var(--glow);
+}
+
+.howto ol {
+  padding-left: 20px;
+  line-height: 1.7;
+}
+
+/* ===== FOOTER ===== */
+.foot {
+  text-align: center;
+  padding: 22px 8px;
+  color: #a9d9f5;
+  opacity: 0.85;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 980px) {
+  .video-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+}
+@media (max-width: 640px) {
+  .video-grid { grid-template-columns: 1fr; gap: 14px; }
+  .meta h3 { font-size: 1rem; }
+  .page-intro { font-size: 0.95rem; }
+  .topbar h1 { font-size: 1.2rem; }
+}

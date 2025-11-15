@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Divyanshu’s Tech World — Videos</title>
+  <link rel="stylesheet" href="eport2.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="home-link" href="index.html">← Home</a>
+      <h1>🎥 My Videos</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="page-intro">Here are some of my coding videos, project demos and short explanations. Click play to watch. You can add / replace videos by editing the card blocks below.</p>
+
+    <section class="video-grid">
+
+      <!-- Local video example -->
+      <article class="video-card">
+        <div class="media">
+          <video controls preload="metadata" poster="thumb_local.jpg">
+            <!-- put your local file next to this HTML (e.g., demo.mp4) -->
+            <source src="Intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="meta">
+          <h3>Self Introduction</h3>
+          <p class="desc">20/09/2025 ⏱ 4:12pm</p>
+        </div>
+      </article>
+
+      <!-- YouTube embed example -->
+      <article class="video-card">
+        <div class="media yt">
+          <!-- paste YouTube embed URL (use the embed ID in the src below) -->
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="meta">
+          <h3>Intro to Data Structures — Arrays & Pointers</h3>
+          <p class="desc">Explained with visual examples and live C code. Great for beginners. ✨</p>
+        </div>
+      </article>
+
+      <!-- Video with caption lines -->
+      <article class="video-card">
+        <div class="media">
+          <video controls preload="metadata" poster="thumb_project.jpg">
+            <source src="project_preview.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="meta">
+          <h3>Bus Reservation System — Feature Tour</h3>
+          <p class="desc">
+            • Login & admin panel  
+            • Ticket generation (PDF)  
+            • File-based storage (CSV)  
+            Watch to see the main workflows and code structure.
+          </p>
+        </div>
+      </article>
+
+      <!-- Add more cards: copy one article and update sources, titles & lines -->
+    </section>
+
+    <section class="howto">
+      <h4>How to add a video</h4>
+      <ol>
+        <li>For local videos: Add the `.mp4` file into the same folder and update the `<source src="...">` and the poster thumbnail.</li>
+        <li>For YouTube: replace `VIDEO_ID` with the ID from the share link — e.g. for `https://youtu.be/abc123` use `abc123` in the iframe `src`.</li>
+        <li>Edit the &lt;h3&gt; for the title and &lt;p class="desc"&gt; for the lines/description under the video.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="foot">
+    © 2025 Garima Negi • Garima’s Tech World
+  </footer>
+</body>
+</html>
